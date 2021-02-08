@@ -117,8 +117,7 @@
               <img  src="../Admin/images/<?=$product['pro_image']?>" class="img-responsive iimag " alt="<?=$product['pro_name']?>">
               <div>
                 <a href="../Admin/images/<?=$product['pro_image']?>" class="btn btn-default fancybox-button">Zoom</a>
-                <a href="../Admin/images/<?=$product['pro_image']?>" class="btn btn-default fancybox-fast-view">View</a>
-                <!-- <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a> -->
+                <a href="#product-pop-up" onclick="setImage('../Admin/images/<?=$product['pro_image'];?>','<?=$product['pro_price'];?>','<?=$product['pro_name'];?>','<?=$product['pro_desc'];?>','shop-item.php?id=<?=$product['prodV_id']?>')" class="btn btn-default fancybox-fast-view">View</a>
               </div>
             </div>
             <??>
@@ -159,7 +158,7 @@
                     <img src="../Admin/images/<?=$row['pro_image'];?>" class="img-responsive iimag" alt="Berry Lace Dress">
                     <div>
                       <a href="../Admin/images/<?=$row['pro_image'];?>" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                      <a href="#product-pop-up" onclick="setImage('../Admin/images/<?=$row['pro_image'];?>','<?=$row['pro_price'];?>','<?=$row['pro_name'];?>','<?=$row['pro_desc'];?>','shop-item.php?id=<?=$row['prodV_id']?>')" data-image="<?=$row['pro_image'];?>" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
                   <h3><a href="shop-item.html"><?=$row['pro_name'];?></a></h3>
@@ -197,7 +196,7 @@
                     <img src="../Admin/images/<?=$randoms['pro_image'];?>" class="img-responsive  iimag" alt="Berry Lace Dress">
                     <div>
                       <a href="../Admin/images/<?=$randoms['pro_image'];?>" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                      <a href="#product-pop-up" onclick="setImage('../Admin/images/<?=$randoms['pro_image'];?>','<?=$randoms['pro_price'];?>','<?=$randoms['pro_name'];?>','<?=$randoms['pro_desc'];?>','shop-item.php?id=<?=$randoms['prodV_id']?>')" class="btn btn-default fancybox-fast-view product-pop-up-btn">View</a>
                     </div>
                   </div>
                   <h3><a href="shop-item.html"><?=$randoms['pro_name']?></a></h3>
@@ -302,3 +301,7 @@ include_once("include/footer.php");
 
 
 ?>
+<script>
+
+
+</script>

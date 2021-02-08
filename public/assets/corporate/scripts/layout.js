@@ -500,3 +500,15 @@ var Layout = function () {
 
     };
 }();
+function setImage(image,price,name,desc,addcart){
+    $("#set-image-item").attr('src', image);
+    $("#itm-name").text(name);
+    $("#itm-price").text(price);
+    $("#itm-desc").text(desc);
+    $("#itm-href").attr('href', addcart);
+
+    
+
+
+
+}

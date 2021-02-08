@@ -25,7 +25,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
 <!-- Head BEGIN -->
 <head>
   <meta charset="utf-8">
-  <title>Metronic Shop UI</title>
+  <title>Super Shoping</title>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -97,8 +97,8 @@ height: 245px;      }
 
 }
 #im77{
-  width: 100% !important;
-  height: 10% !important; 
+  width: 455px !important;
+  height: 291.484px !important; 
 
 }
 
@@ -143,7 +143,11 @@ height: 245px;      }
                 <!-- BEGIN TOP BAR MENU -->
                 <div class="col-md-6 col-sm-6 additional-nav">
                     <ul class="list-unstyled list-inline pull-right">
+                    <?php if(empty($_SESSION['email_customer'])){?>
+                      <li><a> </a></li>
+                      <?php }else{?>
                         <li><a href="shop-account.php">My Account</a></li>
+                          <?php } ?>
                         <li><a href="shop-shopping-cart.php">Checkout</a></li>
                         <?php if(empty($_SESSION['email_customer'])){?>
                         <li><a href="login.php">Log In</a></li>
@@ -207,7 +211,7 @@ if(isset($_SESSION['cart'])){
                   <a href="#shop-item.php"><img src="../Admin/images/<?=$data['pro_image']?>" alt="Rolex Classic Watch" width="37" height="34"></a>
                   <span class="cart-content-count">x <?=$v?></span>
                   <strong><a href="#shop-item.php"><?=$data['pro_name']?></a></strong>
-                  <em><?=$data['pro_price']?></em>
+                  <em>$<?=$data['pro_price']?></em>
                   <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
                 </li>
              

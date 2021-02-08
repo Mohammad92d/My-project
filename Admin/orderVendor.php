@@ -21,6 +21,7 @@ $VendorOrder =     $order->readIdOrderByVendor($_SESSION['vendor_id']);
                             
                             <th class="column-title">ID Order </th>
                             <th class="column-title">ID Product </th>
+                            <th class="column-title">ID custmer </th>
                             <th class="column-title">custmer Mobile </th>
                             <th class="column-title">Date </th>
                             <th class="column-title">Quantity </th>
@@ -39,6 +40,7 @@ $VendorOrder =     $order->readIdOrderByVendor($_SESSION['vendor_id']);
                            <tr>
                            <th class="column-title"><?=$VendorOrders['order_id']?></th>
                             <th class="column-title"><?=$VendorOrders['prodV_id']?></th>
+                            <th class="column-title"><?=$VendorOrders['cust_id']?></th>
                             <th class="column-title"><?=$VendorOrders['cust_mobile']?></th>
                             <th class="column-title"><?=$VendorOrders['order_data']?></th>
                             <th class="column-title"><?=$VendorOrders['qty']?></th>
