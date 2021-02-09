@@ -131,10 +131,8 @@
                     <p id="itm-desc">Lorem ipsum dolor ut sit ame dolore  adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.</p>
                   </div>
                   <div class="product-page-cart">
-                    <div class="product-quantity">
-                        <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">
-                    </div>
-                    <a href="shop-item.html" id="itm-href" class="btn btn-default">Add to cart</a>
+</br>
+                    <a href="shop-item.html" id="itm-href" class="btn btn-primary">Add to cart</a>
                   </div>
                 </div>
 

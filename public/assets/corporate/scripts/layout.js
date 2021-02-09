@@ -221,6 +221,12 @@ var Layout = function () {
                 prevEffect: 'none',
                 nextEffect: 'none',
                 closeBtn: true,
+                width:'250',
+                height:'450',
+                minWidth:'250',
+                minHeight:'450',
+                maxWidth:'250',
+                maxHeight:'450',
                 helpers: {
                     title: {
                         type: 'inside'

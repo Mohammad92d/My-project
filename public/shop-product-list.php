@@ -12,6 +12,7 @@ include_once('../Admin/classes/class_productVendor.php');
                      include_once('../Admin/classes/class_productVendor.php');
                      $proCat =new ProductVendor();
                      $id=$_GET['id'];
+
                      $showCatoginfo=$proCat->readByIdToFindCategoryName($id);
                      foreach($showCatoginfo as $more);
           
@@ -37,7 +38,11 @@ include_once('../Admin/classes/class_productVendor.php');
                   include_once('../Admin/classes/class_productVendor.php');
                   $proCat =new ProductVendor();
                   $id=$_GET['id'];
-                  $showCatog=$proCat->readByIdToShowAllProductAtCatogery($id);
+                  $page=!empty($_GET['page'])?$_GET['page']:1;
+
+                  $showCatog=$proCat->readByIdToShowAllProductAtCatogery($id,$page);
+                  $count=(int)count($proCat->readByIdToShowAllProductAtCatogery($id))/4;
+
                   foreach($showCatog as $showCatogs){
                 
               
@@ -48,7 +53,7 @@ include_once('../Admin/classes/class_productVendor.php');
                     <img src="../Admin/images/<?=$showCatogs['pro_image']?>" class="img-responsive iimag3" alt="Berry Lace Dress">
                     <div>
                       <a href="../Admin/images/<?=$showCatogs['pro_image']?>" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                      <a href="#product-pop-up" onclick="setImage('../Admin/images/<?=$showCatogs['pro_image'];?>','<?=$showCatogs['pro_price'];?>','<?=$showCatogs['pro_name'];?>','<?=$showCatogs['pro_desc'];?>','shop-item.php?id=<?=$showCatogs['prodV_id']?>')" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
                   <h3><a href="shop-item.php"><?=$showCatogs['pro_name']?></a></h3>
@@ -66,13 +71,12 @@ include_once('../Admin/classes/class_productVendor.php');
             <div class="row">
               <div class="col-md-8 col-sm-8">
                 <ul class="pagination pull-right">
-                  <li><a href="javascript:;">&laquo;</a></li>
-                  <li><a href="javascript:;">1</a></li>
-                  <li><span>2</span></li>
-                  <li><a href="javascript:;">3</a></li>
-                  <li><a href="javascript:;">4</a></li>
-                  <li><a href="javascript:;">5</a></li>
-                  <li><a href="javascript:;">&raquo;</a></li>
+                  <li><a class="<?=($page == 1)?"disable-links":''?>"  href="shop-product-list.php?id=<?=$id?>&page=<?=($page-1)?>">&laquo;</a></li>
+                  <?php for($i=1;$i < $count+1;$i++){ ?>
+                  <li><a href="shop-product-list.php?id=<?=$id?>&page=<?=$i?>"><?=$i?></a></li>
+                  <?php  } ?>
+                  
+                  <li><a class="<?=($page > $count)?"disable-links":''?>" href="shop-product-list.php?id=<?=$id?>&page=<?=$page+1?>">&raquo;</a></li>
                 </ul>
               </div>
             </div>
@@ -144,3 +148,8 @@ include_once("include/footer.php");
 
 
 ?>
+<style>
+a.disable-links {
+    pointer-events: none;
+}
+</style>

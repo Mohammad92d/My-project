@@ -139,7 +139,7 @@ include_once("include/header.php");
                     <img src="../Admin/images/<?=$mosts['pro_image']?>" class="img-responsive iimag" alt="Berry Lace Dress">
                     <div>
                       <a href="../Admin/images/<?=$mosts['pro_image']?>" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                      <a href="#product-pop-up" onclick="setImage('../Admin/images/<?=$mosts['pro_image'];?>','<?=$mosts['pro_price'];?>','<?=$mosts['pro_name'];?>','<?=$mosts['pro_desc'];?>','shop-item.php?id=<?=$mosts['prodV_id']?>')" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
                   <h3><a href="shop-item.html"><?=$mosts['pro_name']?></a></h3>

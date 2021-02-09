@@ -87,14 +87,21 @@ class ProductVendor extends dbconnection
 
   public function readByIdToFindCategoryName($id)
   {
-    $query = "SELECT * FROM category WHERE cat_id = $id";
+    $query = "SELECT * FROM category WHERE cat_id = $id ";
+  
+      
     $result = $this->performQuery($query);
     return $this->fetchAll($result);
   }
 
-  public function readByIdToShowAllProductAtCatogery($id)
+  public function readByIdToShowAllProductAtCatogery($id,$page=null)
   {
-    $query = "SELECT * FROM productVendor WHERE cat_id = $id";
+    $query = "SELECT * FROM productVendor WHERE cat_id = $id ";
+      if($page){
+        $offset = ($page - 1) * 4;
+      $query .=" LIMIT 4 OFFSET $offset;";
+
+    }
     $result = $this->performQuery($query);
     return $this->fetchAll($result);
   }
@@ -108,7 +115,7 @@ class ProductVendor extends dbconnection
 
   public function prodcutNew()
   { // select proudct between this condition
-    $query = "SELECT * FROM productVendor WHERE prodV_id BETWEEN 13 AND 20";
+    $query = "SELECT * FROM productVendor WHERE prodV_id BETWEEN 20 AND 40";
     $result = $this->performQuery($query);
     return $this->fetchAll($result);
   }
